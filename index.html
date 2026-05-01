@@ -128,8 +128,25 @@
 
   /* ================ HERO ================ */
   .hero {
-    padding: 80px 0 60px;
+    padding: 60px 0 60px;
     position: relative;
+  }
+
+  .hero-image {
+    width: 100%;
+    aspect-ratio: 16 / 7;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 60px;
+    background: var(--bg-warm);
+    box-shadow: var(--shadow);
+  }
+
+  .hero-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
   }
 
   .hero-grid {
@@ -178,6 +195,31 @@
     margin-bottom: 40px;
   }
 
+  .hero-bullets {
+    list-style: none;
+    max-width: 520px;
+    margin-bottom: 40px;
+  }
+
+  .hero-bullets li {
+    position: relative;
+    padding: 8px 0 8px 26px;
+    font-size: 1.02rem;
+    color: var(--ink-soft);
+    line-height: 1.5;
+  }
+
+  .hero-bullets li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 18px;
+    width: 8px;
+    height: 8px;
+    background: var(--accent);
+    border-radius: 50%;
+  }
+
   .hero-price {
     text-align: right;
   }
@@ -210,7 +252,7 @@
 
   .stats-grid {
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     gap: 32px;
   }
 
@@ -865,6 +907,10 @@
 <!-- ================ HERO ================ -->
 <section class="hero">
   <div class="container">
+    <div class="hero-image">
+      <img src="photos/04.jpg" alt="Lichtrijke leefruimte met eettafel en zicht op de tuin">
+    </div>
+
     <div class="hero-grid">
       <div>
         <div class="hero-status">
@@ -872,14 +918,17 @@
           <span class="label">Beschikbaar · Particuliere verkoop</span>
         </div>
         <h1 class="display">
-          Een instapklare thuis, gemaakt om te <em>genieten</em>.
+          Instapklare gezinswoning in Aartselaar met <em>modern comfort</em>.
         </h1>
-        <p class="hero-sub">
-          Een hoogwaardige, instapklare gezinswoning uit 2016 met EPC&nbsp;A en
-          warmtepomp. Een plek die direct aanvoelt als een warme thuis — met vrij
-          uitzicht op een groen veld achteraan en een feilloze verbinding naar
-          de A12 en E19.
-        </p>
+        <ul class="hero-bullets">
+          <li>100% instapklaar en hoogwaardig afgewerkt</li>
+          <li>Open leefruimte verbonden met de tuin</li>
+          <li>3 ruime slaapkamers (makkelijk 4 van te maken) én een apart bureau</li>
+          <li>2 badkamers en 3 toiletten</li>
+          <li>Warmtepomp met vloerverwarming en koeling</li>
+          <li>Garage en 2 extra plaatsen op de oprit</li>
+          <li>Vlotte verbinding naar A12/E19</li>
+        </ul>
       </div>
       <div class="hero-price">
         <div class="hero-price-label label">Vraagprijs</div>
@@ -897,11 +946,6 @@
           <div class="stat-detail">op 199 m² perceel</div>
         </div>
         <div class="stat">
-          <div class="label">Slaapkamers</div>
-          <div class="stat-value">3</div>
-          <div class="stat-detail">uitbreidbaar naar 4</div>
-        </div>
-        <div class="stat">
           <div class="label">Energielabel</div>
           <span class="epc-badge">A</span>
           <div class="stat-detail">71 kWh/m²/jaar</div>
@@ -912,9 +956,9 @@
           <div class="stat-detail">uitstekende staat</div>
         </div>
         <div class="stat">
-          <div class="label">Parkeren</div>
-          <div class="stat-value">3</div>
-          <div class="stat-detail">garage + 2 buiten</div>
+          <div class="label">Mobiscore</div>
+          <div class="stat-value">8.0<sup>/10</sup></div>
+          <div class="stat-detail">scholen, winkels &amp; OV</div>
         </div>
       </div>
     </div>
@@ -931,23 +975,18 @@
   <div class="gallery-grid reveal">
     <div class="gallery-item gallery-item-1">
       <img src="photos/04.jpg" alt="Lichtrijke leefruimte met eettafel en zicht op de tuin" loading="lazy">
-      <span class="gallery-caption">Leefruimte met tuinzicht</span>
     </div>
     <div class="gallery-item gallery-item-2">
       <img src="photos/11.jpg" alt="Volledig uitgeruste keuken met inductiekookplaat" loading="lazy">
-      <span class="gallery-caption">Keuken</span>
     </div>
     <div class="gallery-item gallery-item-3">
       <img src="photos/15.jpg" alt="Ruime master slaapkamer met dakvensters" loading="lazy">
-      <span class="gallery-caption">Master · 31 m²</span>
     </div>
     <div class="gallery-item gallery-item-4">
       <img src="photos/22.jpg" alt="Badkamer met ligbad en donkere natuursteenlook" loading="lazy">
-      <span class="gallery-caption">Badkamer</span>
     </div>
     <div class="gallery-item gallery-item-5">
       <img src="photos/28.jpg" alt="Luchtopname tuin met groen veld op de achtergrond" loading="lazy">
-      <span class="gallery-caption">Groen achterzicht</span>
     </div>
   </div>
 </section>
@@ -958,7 +997,7 @@
     <div class="story-grid">
       <div class="reveal">
         <div class="label" style="margin-bottom: 16px;">— Over de woning</div>
-        <h2 class="display">Geen showhuis, maar een <em>thuis</em>.</h2>
+        <h2 class="display">Doordacht ontworpen, <em>meteen</em> thuis.</h2>
       </div>
       <div class="story-prose reveal">
         <p>
@@ -968,24 +1007,27 @@
           is voor de volgende eigenaars.
         </p>
         <p>
-          Op het gelijkvloers ontvangt een ruime inkomhal je met gastentoilet
+          Op het gelijkvloers ontvangt een inkomhal je met gastentoilet
           en berging. Die geeft uit op een lichtrijke, open leefruimte met
-          groot schuifraam naar de tuin — aansluitend bevindt zich de volledig
+          groot schuifraam naar de tuin. Aansluitend bevindt zich de volledig
           uitgeruste keuken.
         </p>
         <p>
           De eerste verdieping omvat twee slaapkamers, een apart bureau, een
           wasplaats en een badkamer met toilet, bad en dubbel lavabomeubel.
           Op de tweede verdieping vind je een ruime master van 31 m² met dressing,
-          een berging en een tweede badkamer met douche. Die master kan probleemloos
-          opgesplitst worden in twee volwaardige slaapkamers.
+          een berging en een tweede badkamer met toilet, douche en dubbel
+          lavabomeubel. De master kan probleemloos opgesplitst worden in twee
+          volwaardige slaapkamers.
         </p>
         <p>
-          Wat deze woning bijzonder maakt: warmtepomp met vloerverwarming
-          én -koeling, ventilatiesysteem D, regenwaterrecuperatie met automatische
-          omschakeling, en parket met ingemaakte kasten. De tuin grenst aan een
-          groen veld met bomen — een uitzicht dat je zelden vindt op deze afstand
-          van Antwerpen.
+          De woning is uitgerust met hedendaagse, duurzame technieken: een
+          warmtepomp met vloerverwarming en -koeling, een ventilatiesysteem D,
+          regenwaterrecuperatie voor de toiletten met automatische omschakeling.
+        </p>
+        <p>
+          De hoogwaardige afwerking met parketvloeren en ingemaakte kasten
+          zorgt voor een stijlvolle en warme uitstraling.
         </p>
       </div>
     </div>
@@ -1002,165 +1044,78 @@
   <div class="more-grid reveal">
     <div class="gallery-item">
       <img src="photos/02.jpg" alt="Achtergevel van de woning met tuin" loading="lazy">
-      <span class="gallery-caption">Achtergevel</span>
     </div>
     <div class="gallery-item">
       <img src="photos/03.jpg" alt="Voorgevel vanaf de straat" loading="lazy">
-      <span class="gallery-caption">Voorgevel</span>
     </div>
     <div class="gallery-item">
       <img src="photos/01.jpg" alt="Leefruimte vanuit andere hoek" loading="lazy">
-      <span class="gallery-caption">Leefruimte</span>
     </div>
     <div class="gallery-item">
       <img src="photos/09.jpg" alt="Gezellige zithoek met sofa" loading="lazy">
-      <span class="gallery-caption">Zithoek</span>
     </div>
     <div class="gallery-item">
       <img src="photos/05.jpg" alt="Eetkamer met trap en zicht op keuken" loading="lazy">
-      <span class="gallery-caption">Eetkamer</span>
     </div>
     <div class="gallery-item">
       <img src="photos/07.jpg" alt="Eetkamer met inbouwkasten en TV-wand" loading="lazy">
-      <span class="gallery-caption">Eet-/zithoek</span>
     </div>
     <div class="gallery-item">
       <img src="photos/08.jpg" alt="Trap vanuit de eetkamer" loading="lazy">
-      <span class="gallery-caption">Trap &amp; eetkamer</span>
     </div>
     <div class="gallery-item">
       <img src="photos/14.jpg" alt="Zwarte zwevende designtrap" loading="lazy">
-      <span class="gallery-caption">Designtrap</span>
     </div>
     <div class="gallery-item">
       <img src="photos/10.jpg" alt="Keuken hoek met spoelbak en raam" loading="lazy">
-      <span class="gallery-caption">Keuken</span>
     </div>
     <div class="gallery-item">
       <img src="photos/12.jpg" alt="Keuken met oven en bergkasten" loading="lazy">
-      <span class="gallery-caption">Keuken detail</span>
     </div>
     <div class="gallery-item">
       <img src="photos/13.jpg" alt="Inkomhal met voordeur en trap" loading="lazy">
-      <span class="gallery-caption">Inkomhal</span>
     </div>
     <div class="gallery-item">
       <img src="photos/06.jpg" alt="Tuin met haag en gras" loading="lazy">
-      <span class="gallery-caption">Tuin</span>
     </div>
     <div class="gallery-item">
       <img src="photos/16.jpg" alt="Dressing onder de nok" loading="lazy">
-      <span class="gallery-caption">Dressing</span>
     </div>
     <div class="gallery-item">
       <img src="photos/17.jpg" alt="Tweede slaapkamer met tuinzicht" loading="lazy">
-      <span class="gallery-caption">Slaapkamer 2</span>
     </div>
     <div class="gallery-item">
       <img src="photos/18.jpg" alt="Derde slaapkamer met bureau" loading="lazy">
-      <span class="gallery-caption">Slaapkamer 3</span>
     </div>
     <div class="gallery-item">
       <img src="photos/19.jpg" alt="Apart bureau" loading="lazy">
-      <span class="gallery-caption">Bureau</span>
     </div>
     <div class="gallery-item">
       <img src="photos/20.jpg" alt="Bureau met zicht op werkplek" loading="lazy">
-      <span class="gallery-caption">Bureau · werkplek</span>
     </div>
     <div class="gallery-item">
       <img src="photos/21.jpg" alt="Eerste badkamer met dubbele lavabo" loading="lazy">
-      <span class="gallery-caption">Badkamer 1</span>
     </div>
     <div class="gallery-item">
       <img src="photos/23.jpg" alt="Tweede badkamer met dubbele wastafel" loading="lazy">
-      <span class="gallery-caption">Badkamer 2</span>
     </div>
     <div class="gallery-item">
       <img src="photos/24.jpg" alt="Inloopdouche met natuursteenlook" loading="lazy">
-      <span class="gallery-caption">Douche</span>
     </div>
     <div class="gallery-item">
       <img src="photos/25.jpg" alt="Gastentoilet" loading="lazy">
-      <span class="gallery-caption">Gastentoilet</span>
     </div>
     <div class="gallery-item">
       <img src="photos/26.jpg" alt="Wasplaats met wasmachine en droger" loading="lazy">
-      <span class="gallery-caption">Wasplaats</span>
     </div>
     <div class="gallery-item">
       <img src="photos/27.jpg" alt="Berging met diepvries" loading="lazy">
-      <span class="gallery-caption">Berging</span>
     </div>
     <div class="gallery-item">
       <img src="photos/29.jpg" alt="Oprit met garages" loading="lazy">
-      <span class="gallery-caption">Oprit &amp; garages</span>
     </div>
     <div class="gallery-item">
       <img src="photos/30.jpg" alt="Garage interieur" loading="lazy">
-      <span class="gallery-caption">Garage</span>
-    </div>
-  </div>
-</section>
-
-<!-- ================ FEATURES ================ -->
-<section class="features container">
-  <div class="section-head reveal">
-    <h2 class="display">Zes redenen waarom <em>deze</em> woning.</h2>
-  </div>
-
-  <div class="features-grid reveal">
-    <div class="feature">
-      <div class="feature-num">i.</div>
-      <h3>EPC A — uitzonderlijk</h3>
-      <p>
-        71 kWh/m²/jaar. Een score die je zelden tegenkomt op de huidige
-        Vlaamse markt, en die jaren bespaart op energiefacturen én
-        verplichte renovaties.
-      </p>
-    </div>
-    <div class="feature">
-      <div class="feature-num">ii.</div>
-      <h3>Warmtepomp + koeling</h3>
-      <p>
-        Lucht-water warmtepomp met vloerverwarming én vloerkoeling. Comfortabel
-        in de winter, aangenaam koel in de zomer — zonder airconditioning.
-      </p>
-    </div>
-    <div class="feature">
-      <div class="feature-num">iii.</div>
-      <h3>Groen achterzicht</h3>
-      <p>
-        De tuin grenst aan een open veld met bomen. Geen achterburen,
-        wel ochtendvogels. Een rust die zelden te vinden is op
-        15 minuten van Antwerpen.
-      </p>
-    </div>
-    <div class="feature">
-      <div class="feature-num">iv.</div>
-      <h3>Mobiscore 8/10</h3>
-      <p>
-        Vlotte verbinding via de Pierstraat naar de A12 en via de Expresweg
-        naar de E19. Antwerpen-centrum, Brussel en de luchthaven liggen
-        binnen comfortabel pendelbereik.
-      </p>
-    </div>
-    <div class="feature">
-      <div class="feature-num">v.</div>
-      <h3>Drie parkeerplaatsen</h3>
-      <p>
-        Garage met directe toegang tot de woning, plus twee bijkomende
-        plaatsen op de oprit. Een luxe in deze regio.
-      </p>
-    </div>
-    <div class="feature">
-      <div class="feature-num">vi.</div>
-      <h3>Geen werkenlijst</h3>
-      <p>
-        Hoogwaardige afwerking, parketvloeren, ingemaakte kasten,
-        geldig keuringsattest elektriciteit, geen verplichte renovatiewerken.
-        Verhuiswagen genoeg.
-      </p>
     </div>
   </div>
 </section>
@@ -1195,7 +1150,7 @@
         <div class="spec-row"><span>Koeling</span><span>Vloerkoeling</span></div>
         <div class="spec-row"><span>Ventilatie</span><span>Systeem D</span></div>
         <div class="spec-row"><span>Glas</span><span>Dubbel</span></div>
-        <div class="spec-row"><span>Regenwater</span><span>Recuperatie + omschakeling</span></div>
+        <div class="spec-row"><span>Regenwater</span><span>Automatische omschakeling</span></div>
         <div class="spec-row"><span>Garage</span><span>1 + 2 buitenparkings</span></div>
         <div class="spec-row"><span>Keuringsattest elektriciteit</span><span>Geldig</span></div>
         <div class="spec-row"><span>Asbestattest</span><span>Niet vereist (bouwjaar 2016)</span></div>
@@ -1216,7 +1171,7 @@
       <p>
         De rust van een groene gemeente, de bereikbaarheid van een centrumstad.
         Antwerpen is met de fiets of auto vlot bereikbaar; pendelaars naar Brussel
-        of Mechelen profiteren van de snelle aansluiting op de E19.
+        of Mechelen profiteren van de snelle aansluiting op de E19 of A12.
       </p>
 
       <div class="mobiscore">
@@ -1272,7 +1227,7 @@
           <a href="tel:+32472362225" class="contact-method">
             <div>
               <strong>Telefoon</strong>
-              <span>+32 472 36 22 25 · ma–vr, 18u–21u</span>
+              <span>+32 472 36 22 25</span>
             </div>
             <span class="contact-method-arrow">→</span>
           </a>
